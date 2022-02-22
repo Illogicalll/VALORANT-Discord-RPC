@@ -1,2 +1,2 @@
 # VALORANT-Discord-RPC
-Discord Rich Presence for VALORANT, see when friends are in-game or queueing
+Discord Rich Presence intergration for VALORANT, display current in-game status via Rich Presence in Discord
