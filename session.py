@@ -57,7 +57,10 @@ async def getSession(accessToken, entitlementsToken, region, playerID):
     if gamefilesState == 'Pregame':
 
         async with session.get(f'https://glz-{region}-1.{region}.a.pvp.net/pregame/v1/players/{playerID}', headers=headers, json={}) as r:
-            data = await r.json(content_type='text/plain')
+            try:
+                data = await r.json(content_type='text/plain')
+            except:
+                data = r.json(content_type='application/json')
         pregameID = data['MatchID']
 
         async with session.get(f'https://glz-{region}-1.{region}.a.pvp.net/pregame/v1/matches/{pregameID}', headers=headers, json={}) as r:
